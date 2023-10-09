@@ -1,115 +1,266 @@
+/* css reset */
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.app {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
 }
 
-.calculator {
-	background-color: #43507a;
-	width: 100%;
-	max-width: 375px;
-	min-height: 640px;
-	display: flex;
-	flex-direction: column;
-	border-radius: 1.5rem;
-	overflow: hidden;
+ul {
+  list-style: none;
 }
 
-.display {
-	min-height: 200px;
-	padding: 1.5rem;
-	display: flex;
-	justify-content: flex-end;
-	align-items: flex-end;
-	color: rgb(0, 0, 0);
-	text-align: right;
-	flex: 1 1 0%;
+a {
+  text-decoration: none;
 }
 
-.display .content {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	width: 100%;
-	max-width: 100%;
-	overflow: auto;
+#header {
+  display: flex;
 }
 
-.display .input {
-	width: 100%;
-	font-size: 2rem;
-    font-weight: 500;
-	margin-bottom: 0.5rem;
-    
+#nav-bar {
+  position: fixed;
+  top: 0px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(221, 22, 88);
+  overflow: hidden;
+}
+/*
+@media only screen and (max-width:600px){
+#nav-bar ul {
+  display: flex;
 }
 
-.display .output {
-	font-size: 2.5rem;
-	font-weight: 700;
-	width: 100%;
-	white-space: nowrap;
+#nav-bar ul li {
+  padding: 1rem 2rem;
 }
 
-.display .operator {
-	color: #0e0c0c;
+#nav-bar ul li a {
+  color: #333;
+  font-size: 1.2rem;
+}     } */
+
+/* UTILITY CLASSES */
+#container {
+  max-width: 960px;
+  margin: 2rem auto 0;
+  overflow: hidden;
 }
 
-.display .brackets,
-.display .percent {
-	color: #000000;
+.logo {
+  width: 300px;
+  cursor: pointer;
 }
 
-.buttons {
-	background-color: #9b7a4f;
-	padding: 1.5rem;
-	border-radius: 1.5rem 1.5rem 0 0;
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(5, 1fr);
-	grid-gap: 1rem;
-	box-shadow: 0px -2px 16px rgba(0, 0, 0, 0.2);
+@media (min-width: 1200px) {
+  body {
+      background-color: rgb(245, 242, 242);
+  }
 }
 
-.buttons .button {
-	position: relative;
-	cursor: pointer;
-
-	display: block;
-	height: 0;
-	padding-top: 100%;
-	background-color: #43507a;
-	border-radius: 1rem;
-	transition: 0.2s;
-	user-select: none;
+.btn {
+  display: inline-block;
+  padding: 0.4rem 1.5rem;
+  color: #333;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #eeb90a;
 }
 
-.buttons .button span {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-
-	font-size: 2rem;
-	font-weight: 700;
-	color: #FFF;
+.nav-link {
+    float: left;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
 }
 
-.buttons .button:hover {
-	box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.2);
+
+.message-box {
+  margin: 1.5rem;
+  padding: 0.8rem;
+  text-align: center;
 }
 
-.buttons .button.operator span {
-	color: #b5ce2681;
+.message-box h1 {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
 }
 
-.buttons .button.action span {
-	color: #dbdd4d81;
+.message-box input {
+  display: block;
+  margin: auto;
+  width: 30%;
+  padding: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+#features {
+  padding: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#features .feature {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+}
+
+#features .feature i {
+  color: #152363;
+}
+
+#features .feature div {
+  padding: 1rem;
+  margin-left: 3rem;
+}
+
+#features .feature div h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#how-it-work {
+  padding: 3rem;
+  margin: auto;
+  text-align: center;
+}
+
+#how-it-work #video {
+  width: 600px;
+  height: 340px;
+}
+
+#pricing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 0.2rem;
+}
+
+.price-box {
+  border: solid #333 3px;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.price-box:first-child {
+  margin-right: 1.2rem;
+}
+
+.price-box:last-child {
+  margin-left: 1.2rem;
+}
+
+.price-box h3 {
+  background-color: #ddd;
+  font-size: 1.05rem;
+  padding: 1rem;
+}
+
+.price-box h2 {
+  padding: 1rem;
+}
+
+.price-box p {
+  padding: 0 4rem 1rem;
+}
+
+.price-box .btn {
+  display: inline-block;
+  margin: 1rem;
+}
+
+/* FOOTER */
+#main-footer {
+  background-color: #ccc;
+  padding: 1rem 4rem;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+#main-footer div a {
+  color: #333;
+  padding: 0.5rem 1rem;
+}
+
+#fcs {
+  text-decoration: underline;
+  color: #333;
+}
+
+/* TABLET AND SMARTPHONE */
+@media only screen and (max-width: 800px) {
+  #navbar {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 0.3rem;
+  }
+
+  #navbar ul li {
+    padding: 1rem 1rem;
+  }
+
+  #features .feature {
+    flex-direction: column;
+  }
+
+  #features .feature div {
+    padding: 1rem;
+    margin: 0.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  #how-it-work {
+    padding: 1rem;
+  }
+
+  #how-it-work #video {
+    width: 80%;
+    height: 30%;
+  }
+
+  #pricing {
+    flex-direction: column;
+  }
+
+  #pricing .price-box {
+    margin: 1rem;
+  }
+
+  .price-box:first-child {
+    margin-right: 0;
+  }
+
+  .price-box:last-child {
+    margin-left: 0;
+  }
+
+  #main-footer {
+    padding: 2.5rem 0.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #main-footer .my-name {
+    margin: 1rem 0;
+  }
 }
